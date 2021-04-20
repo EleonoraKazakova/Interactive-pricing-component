@@ -1,0 +1,516 @@
+body {
+  margin: 0;
+  background-color: #fafbff;
+  background-image: url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 321px) and (max-width: 999px) {
+  body {
+    margin: 0;
+    background-color: #fafbff;
+    background-image: url(./images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: inherit;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: auto 350px auto;
+    grid-template-rows: auto 470px auto;
+    grid-template-areas: "hd hd hd" "lf mn rt" "ft ft ft";
+    min-height: 100vh;
+  }
+
+  .header {
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #293356;
+    font-size: 20px;
+    padding: 20px;
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .component {
+    grid-area: mn;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .yearly-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+    width: 45px;
+    height: 20px;
+    margin-left: -20px;
+  }
+
+  .yearly-toggle:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .yearly-toggle {
+    background-color: #2196F3;
+  }
+
+  input:focus + .yearly-toggle {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .yearly-toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .price {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 85%;
+    height: 5px;
+    border-radius: 2.5px;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    position: fixed;
+    margin-top: 70px;
+  }
+
+  /*.slider::-moz-range-thumb {
+    background-image: url(../images/icon-slider.svg)
+  }*/
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-image: url(./images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #10d5c2;
+    border: none;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background-image: url(./images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #10d5c2;
+    border: none;
+  }
+
+  .billing {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: #858fad;
+  }
+
+  .billingBackground {
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #feece7;
+    color: #ff8c66;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .space {
+    width: 10px;
+  }
+
+  .margin {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #cdd7ee;
+    display: flex;
+  }
+
+  .button {
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #293356;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bdccff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .lowerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .check {
+    background-image: url(./images/icon-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10px;
+    display: flex;
+  }
+
+  .checkList {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: #858fad;
+  }
+
+  .checkElement {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .headerText {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #858fad;
+    display: flex;
+    align-items: center;
+  }
+
+  .priceText {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #293356;
+  }
+
+  .subtitle {
+    display: flex;
+    width: 230px;
+    text-align: center;
+  }
+}
+@media (min-width: 1000px) {
+  .content {
+    display: grid;
+    grid-template-columns: auto 500px auto;
+    grid-template-rows: auto 350px auto;
+    grid-template-areas: "hd hd hd" "lf mn rt" "ft ft ft";
+    min-height: 100vh;
+  }
+
+  .header {
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #293356;
+    font-size: 26px;
+    padding: 20px;
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .component {
+    grid-area: mn;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .yearly-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+    width: 45px;
+    height: 20px;
+    margin-left: -20px;
+  }
+
+  .yearly-toggle:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .yearly-toggle {
+    background-color: #2196F3;
+  }
+
+  input:focus + .yearly-toggle {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .yearly-toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 85%;
+    height: 5px;
+    border-radius: 2.5px;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  /*.slider::-moz-range-thumb {
+    background-image: url(../images/icon-slider.svg)
+  }*/
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-image: url(./images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #10d5c2;
+    border: none;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background-image: url(./images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center;
+    background-color: #10d5c2;
+    border: none;
+  }
+
+  .billing {
+    display: flex;
+    width: 80%;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: #858fad;
+  }
+
+  .billingBackground {
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #feece7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff8c66;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .space {
+    width: 10px;
+  }
+
+  .margin {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #cdd7ee;
+    display: flex;
+  }
+
+  .button {
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #293356;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bdccff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .lowerBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+  }
+
+  .check {
+    background-image: url(./images/icon-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10px;
+    display: flex;
+  }
+
+  .checkList {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: #858fad;
+  }
+
+  .checkElement {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .headerText {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #858fad;
+    display: flex;
+    align-items: center;
+  }
+
+  .priceText {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #293356;
+  }
+
+  .subtitle {
+    display: flex;
+    flex-direction: row;
+  }
+}
