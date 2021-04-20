@@ -1,0 +1,268 @@
+@use 'colors';
+$text: 'Manrope', sans-serif;
+
+@media  (min-width: 321px) and (max-width: 999px){
+  body{
+    margin: 0;
+    background-color: colors.$main-background;
+    background-image: url(../images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: inherit;
+  }
+  .content{
+    display: grid;
+    grid-template-columns: auto 350px auto;
+    grid-template-rows: auto 470px auto;
+    grid-template-areas:
+    "hd hd hd"  
+    "lf mn rt"
+    "ft ft ft";
+    min-height: 100vh;
+  }
+  .header{
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $text;
+    font-weight: 800;
+    color: colors.$text-CTA-background;
+    font-size: 20px;
+    padding: 20px;
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center; 
+  }
+  
+  .component{
+    grid-area: mn;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    font-family: $text;
+    font-weight: 600;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .yearly-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    width: 45px;
+    height: 20px;
+    margin-left: -20px;
+  }
+  
+  .yearly-toggle:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .yearly-toggle {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .yearly-toggle {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .yearly-toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .price {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 85%;
+    height: 5px;
+    border-radius: 2.5px;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    position: fixed;
+    margin-top: 70px;
+  }
+  
+  /*.slider::-moz-range-thumb {
+    background-image: url(../images/icon-slider.svg)
+  }*/
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center; 
+    background-color: colors.$slider-backround;
+    border: none;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/icon-slider.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-position: center; 
+    background-color: colors.$slider-backround;
+    border: none;
+
+  }
+  
+  .billing{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-family: $text;
+    font-weight: 600;
+    color: colors.$text;
+  }
+  
+  .billingBackground {
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: colors.$discount-background;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    color: colors.$discount-text;
+    font-family: $text;
+    font-weight: 600;
+    font-size: 12px;
+    //max-width: 30px;
+    overflow: hidden;
+    //display: -webkit-box;
+    text-align: center;
+   }
+  
+  .space {
+    width: 10px;  
+  }
+  
+  .margin {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: colors.$toggle-background;
+    display: flex;
+  }
+  
+  .button {
+   width: 130px;
+   height: 30px;
+   border-radius: 15px;
+   background-color: colors.$text-CTA-background;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: colors.$CTA-text;
+   font-family: $text;
+   font-weight: 600;
+   font-size: 12px;
+  }
+  
+  .lowerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .check {
+    background-image: url(../images/icon-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10px;
+    display: flex;
+  }
+  
+  .checkList {
+   width: 200px;
+   display: flex;
+   flex-direction: column;
+   font-family: $text;
+   font-weight: 600;
+   color: colors.$text;
+  }
+  
+  .checkElement {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+   }
+  
+  .headerText{
+    font-family: $text;
+    font-weight: 600;
+    font-size: 16px;
+    color: colors.$text;
+    display: flex;
+    align-items: center;
+  }
+  
+  .priceText{
+    font-family: $text;
+    font-weight: 800;
+    font-size: 30px;
+    color: colors.$text-CTA-background;
+  }
+
+  .subtitle{
+    display: flex;
+    width: 230px;
+    text-align: center;
+  }
+}

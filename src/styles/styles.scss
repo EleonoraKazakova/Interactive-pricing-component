@@ -1,0 +1,14 @@
+@use 'colors';
+
+body{
+  margin: 0;
+  background-color: colors.$main-background;
+  background-image: url(../images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
