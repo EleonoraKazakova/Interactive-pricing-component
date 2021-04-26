@@ -3,7 +3,7 @@ import './styles/app'
 
 export default function App() {
   const pageviews = ["0", "10K", "50K", "100K", "1M"]
-  const prices = ['8.00', '12.00', '16.00', '24.00', '36.00']
+  const prices = [8, 12, 16, 24, 36]
 
   const [selectedIndex, setSelectedIndex] = useState(0)
   const changePrice = (event) => {
@@ -11,6 +11,11 @@ export default function App() {
   }
 
   const percentColorRange = (selectedIndex * 100) / 4
+
+  const [discount, setDiscount] = useState(false)
+  const changePriceDiscount = () => {
+    setDiscount(!discount)
+  }
 
   return (
     <div className='content'>
@@ -23,7 +28,10 @@ export default function App() {
       <div className='component'>
         <div className='price'>
           <div className='headerText'>{pageviews[selectedIndex]} PAGEVIEWS</div>
-          <div className='headerText'> <div className='priceText'>${prices[selectedIndex]}</div> / per month</div>
+          {/*<div className='headerText'> <div className='priceText'>${prices[selectedIndex]}</div> / per month</div>*/}
+          <div className='headerText'> <div className='priceText'>
+            ${(discount ? prices[selectedIndex] * 0.75 : prices[selectedIndex]).toFixed(2)}
+          </div> / per month</div>
         </div>
 
         <input
@@ -41,14 +49,14 @@ export default function App() {
           <span className='space'></span>
           <div className='margin'>
             <label className="switch">
-              <input type="checkbox" />
+              <input type="checkbox" onChange={changePriceDiscount} />
               <span className="yearly-toggle"></span>
             </label>
           </div>
           <span className='space'></span>
           <p>Yearly Billing</p>
           <span className='space'></span>
-          { screen.width > 1000 ? <p className='billingBackground'> 25% discount</p> : <p className='billingBackground'>- 25% </p>}
+          <p className='billingBackground'></p>
           
         </div>
 

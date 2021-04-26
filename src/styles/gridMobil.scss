@@ -169,18 +169,13 @@ $text: 'Manrope', sans-serif;
     height: 20px;
     border-radius: 10px;
     background-color: colors.$discount-background;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
     color: colors.$discount-text;
-    font-family: $text;
-    font-weight: 600;
-    font-size: 12px;
-    //max-width: 30px;
-    overflow: hidden;
-    //display: -webkit-box;
     text-align: center;
-   }
+  }
+
+  .billingBackground::after {
+    content: '-25%';
+  }
   
   .space {
     width: 10px;  

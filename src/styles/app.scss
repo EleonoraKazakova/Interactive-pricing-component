@@ -164,13 +164,12 @@ input:checked + .yearly-toggle:before {
   justify-content: center;
   align-items: center;
   color: colors.$discount-text;
-  font-family: $text;
-  font-weight: 600;
-  font-size: 12px;
-  overflow: hidden;
-    //display: -webkit-box;
-    text-align: center;
+  text-align: center;
  }
+
+ .billingBackground::after {
+    content: '25% discount';
+  }
 
 .space {
   width: 10px;  
