@@ -177,11 +177,11 @@ p {
     border-radius: 10px;
     background-color: #feece7;
     color: #ff8c66;
-    font-family: "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    overflow: hidden;
     text-align: center;
+  }
+
+  .billingBackground::after {
+    content: "-25%";
   }
 
   .space {
@@ -391,6 +391,7 @@ p {
     background-position: center;
     background-color: #10d5c2;
     border: none;
+    box-shadow: 0px 5px 15px #10d5c2;
   }
 
   .slider::-webkit-slider-thumb {
@@ -404,6 +405,7 @@ p {
     background-position: center;
     background-color: #10d5c2;
     border: none;
+    box-shadow: 0px 5px 15px #10d5c2;
   }
 
   .billing {
@@ -425,11 +427,11 @@ p {
     justify-content: center;
     align-items: center;
     color: #ff8c66;
-    font-family: "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    overflow: hidden;
     text-align: center;
+  }
+
+  .billingBackground::after {
+    content: "25% discount";
   }
 
   .space {
