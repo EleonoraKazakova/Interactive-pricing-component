@@ -10,7 +10,7 @@ p {
   margin: 0;
   padding: 0;
 }
-@media (min-width: 321px) and (max-width: 999px) {
+@media (min-width: 321px) and (max-width: 799px) {
   body {
     margin: 0;
     background-color: #fafbff;
@@ -46,21 +46,28 @@ p {
   .component {
     grid-area: mn;
     background-color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
+  }
+
+  .componentTop {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 20px;
   }
 
   .switch {
     position: relative;
     display: inline-block;
     height: 34px;
+    margin-left: 15px;
+    margin-right: 10px;
   }
 
   .switch input {
@@ -76,12 +83,12 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #cdd7ee;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 34px;
-    width: 45px;
-    height: 20px;
+    width: 40px;
+    height: 18px;
     margin-left: -20px;
   }
 
@@ -91,7 +98,7 @@ p {
     height: 12px;
     width: 12px;
     left: 4px;
-    bottom: 5px;
+    bottom: 3.5px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -99,26 +106,17 @@ p {
   }
 
   input:checked + .yearly-toggle {
-    background-color: #2196F3;
+    background-color: #a5f3eb;
   }
 
   input:focus + .yearly-toggle {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #a5f3eb;
   }
 
   input:checked + .yearly-toggle:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-
-  .price {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    gap: 100px;
-    flex-direction: column;
-    align-items: center;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
   }
 
   .slider {
@@ -129,13 +127,9 @@ p {
     outline: none;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
-    position: fixed;
-    margin-top: 70px;
+    order: 2;
   }
 
-  /*.slider::-moz-range-thumb {
-    background-image: url(../images/icon-slider.svg)
-  }*/
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -165,16 +159,18 @@ p {
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    font-size: 12px;
+    font-size: 10px;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     color: #858fad;
+    order: 4;
+    gap: 10px;
   }
 
   .billingBackground {
-    width: 50px;
-    height: 20px;
-    border-radius: 10px;
+    width: 40px;
+    height: 15px;
+    border-radius: 7.5px;
     background-color: #feece7;
     color: #ff8c66;
     text-align: center;
@@ -198,6 +194,7 @@ p {
     height: 2px;
     background-color: #cdd7ee;
     display: flex;
+    order: 5;
   }
 
   .button {
@@ -218,9 +215,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 85%;
     justify-content: space-between;
     gap: 20px;
+    padding: 25px 40px 0 40px;
+    border-top: 2px solid #eaeefb;
   }
 
   .check {
@@ -238,6 +236,7 @@ p {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     color: #858fad;
+    align-items: center;
   }
 
   .checkElement {
@@ -246,13 +245,22 @@ p {
     gap: 10px;
   }
 
-  .headerText {
+  .pricePerMonth {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #858fad;
     display: flex;
     align-items: center;
+    order: 3;
+  }
+
+  .headerText {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #858fad;
+    order: 1;
   }
 
   .priceText {
@@ -268,7 +276,7 @@ p {
     text-align: center;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .content {
     display: grid;
     grid-template-columns: auto 500px auto;
@@ -296,21 +304,26 @@ p {
   .component {
     grid-area: mn;
     background-color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
+  }
+
+  .componentTop {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 40px 40px 20px 40px;
   }
 
   .switch {
     position: relative;
     display: inline-block;
     height: 34px;
+    margin-left: 20px;
+    margin-right: 5px;
   }
 
   .switch input {
@@ -326,12 +339,12 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #cdd7ee;
     -webkit-transition: 0.4s;
     transition: 0.4s;
-    border-radius: 34px;
-    width: 45px;
-    height: 20px;
+    border-radius: 9px;
+    width: 40px;
+    height: 18px;
     margin-left: -20px;
   }
 
@@ -341,7 +354,7 @@ p {
     height: 12px;
     width: 12px;
     left: 4px;
-    bottom: 5px;
+    bottom: 3px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -349,17 +362,17 @@ p {
   }
 
   input:checked + .yearly-toggle {
-    background-color: #2196F3;
+    background-color: #a5f3eb;
   }
 
   input:focus + .yearly-toggle {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #a5f3eb;
   }
 
   input:checked + .yearly-toggle:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
   }
 
   .price {
@@ -368,14 +381,25 @@ p {
     width: 80%;
   }
 
+  .pricePerMonth {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #858fad;
+    display: flex;
+    align-items: center;
+  }
+
   .slider {
     -webkit-appearance: none;
-    width: 85%;
+    width: 100%;
     height: 5px;
     border-radius: 2.5px;
     outline: none;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   /*.slider::-moz-range-thumb {
@@ -389,9 +413,16 @@ p {
     background-repeat: no-repeat;
     border-radius: 50%;
     background-position: center;
-    background-color: #10d5c2;
+    background-color: #a5f3eb;
     border: none;
-    box-shadow: 0px 5px 15px #10d5c2;
+  }
+
+  .slider::-moz-range-thumb:hover {
+    background-color: #10d5c2;
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    background-color: #10d5c2;
   }
 
   .slider::-webkit-slider-thumb {
@@ -410,18 +441,20 @@ p {
 
   .billing {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: flex-end;
-    font-size: 12px;
+    font-size: 10px;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     color: #858fad;
+    padding-right: 15px;
+    gap: 10px;
   }
 
   .billingBackground {
     width: 100px;
-    height: 20px;
-    border-radius: 10px;
+    height: 18px;
+    border-radius: 9px;
     background-color: #feece7;
     display: flex;
     justify-content: center;
@@ -462,14 +495,20 @@ p {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 12px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    color: white;
   }
 
   .lowerBlock {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 85%;
     justify-content: space-between;
+    padding: 25px 40px 0 40px;
+    border-top: 2px solid #eaeefb;
   }
 
   .check {
