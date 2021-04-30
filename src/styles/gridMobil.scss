@@ -1,7 +1,7 @@
 @use 'colors';
 $text: 'Manrope', sans-serif;
 
-@media  (min-width: 321px) and (max-width: 999px){
+@media  (min-width: 321px) and (max-width: 799px){
   body{
     margin: 0;
     background-color: colors.$main-background;
@@ -37,22 +37,29 @@ $text: 'Manrope', sans-serif;
   
   .component{
     grid-area: mn;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
+    background-color: rgb(255, 255, 255);    
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
     font-family: $text;
     font-weight: 600;
+  }
+
+  .componentTop{
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 20px;
   }
   
   .switch {
     position: relative;
     display: inline-block;
     height: 34px;
+    margin-left: 15px;
+    margin-right: 10px;
   }
   
   .switch input { 
@@ -68,12 +75,12 @@ $text: 'Manrope', sans-serif;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: colors.$toggle-background;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
-    width: 45px;
-    height: 20px;
+    width: 40px;
+    height: 18px;
     margin-left: -20px;
   }
   
@@ -83,7 +90,7 @@ $text: 'Manrope', sans-serif;
     height: 12px;
     width: 12px;
     left: 4px;
-    bottom: 5px;
+    bottom: 3.5px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -91,26 +98,17 @@ $text: 'Manrope', sans-serif;
   }
   
   input:checked + .yearly-toggle {
-    background-color: #2196F3;
+    background-color: colors.$full-slider-bar;
   }
   
   input:focus + .yearly-toggle {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px colors.$full-slider-bar;
   }
   
   input:checked + .yearly-toggle:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  .price {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    gap: 100px;
-    flex-direction: column;
-    align-items: center;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
   }
   
   .slider {
@@ -121,13 +119,9 @@ $text: 'Manrope', sans-serif;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    position: fixed;
-    margin-top: 70px;
+    order: 2;
   }
   
-  /*.slider::-moz-range-thumb {
-    background-image: url(../images/icon-slider.svg)
-  }*/
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -158,16 +152,18 @@ $text: 'Manrope', sans-serif;
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    font-size: 12px;
+    font-size: 10px;
     font-family: $text;
     font-weight: 600;
     color: colors.$text;
+    order: 4;
+    gap: 10px;
   }
   
   .billingBackground {
-    width: 50px;
-    height: 20px;
-    border-radius: 10px;
+    width: 40px;
+    height: 15px;
+    border-radius: 7.5px;
     background-color: colors.$discount-background;
     color: colors.$discount-text;
     text-align: center;
@@ -191,29 +187,31 @@ $text: 'Manrope', sans-serif;
     height: 2px;
     background-color: colors.$toggle-background;
     display: flex;
+    order: 5;
   }
   
   .button {
-   width: 130px;
-   height: 30px;
-   border-radius: 15px;
-   background-color: colors.$text-CTA-background;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: colors.$CTA-text;
-   font-family: $text;
-   font-weight: 600;
-   font-size: 12px;
+    width: 130px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: colors.$text-CTA-background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: colors.$CTA-text;
+    font-family: $text;
+    font-weight: 600;
+    font-size: 12px;
   }
   
   .lowerBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 85%;
     justify-content: space-between;
     gap: 20px;
+    padding: 25px 40px 0 40px;
+    border-top: 2px solid colors.$empty-slider-bar;
   }
   
   .check {
@@ -225,12 +223,13 @@ $text: 'Manrope', sans-serif;
   }
   
   .checkList {
-   width: 200px;
-   display: flex;
-   flex-direction: column;
-   font-family: $text;
-   font-weight: 600;
-   color: colors.$text;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    font-family: $text;
+    font-weight: 600;
+    color: colors.$text;
+    align-items: center;
   }
   
   .checkElement {
@@ -239,13 +238,22 @@ $text: 'Manrope', sans-serif;
     gap: 10px;
    }
   
-  .headerText{
+  .pricePerMonth{
     font-family: $text;
     font-weight: 600;
     font-size: 16px;
     color: colors.$text;
     display: flex;
     align-items: center;
+    order: 3;
+  }
+
+  .headerText{
+    font-family: $text;
+    font-weight: 600;
+    font-size: 16px;
+    color: colors.$text;
+    order: 1;
   }
   
   .priceText{

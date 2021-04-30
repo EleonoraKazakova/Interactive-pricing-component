@@ -2,7 +2,7 @@
 $text: 'Manrope', sans-serif;
 @use 'gridMobil';
 
-@media  (min-width: 1000px) {
+@media  (min-width: 800px) {
 .content{
   display: grid;
   grid-template-columns: auto 500px auto;
@@ -32,22 +32,27 @@ $text: 'Manrope', sans-serif;
 
 .component{
   grid-area: mn;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 35px;
+  background-color: rgb(255, 255, 255);  
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 20px;
   font-family: $text;
   font-weight: 600;
+}
+
+.componentTop{
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 40px 40px 20px 40px;
 }
 
 .switch {
   position: relative;
   display: inline-block;
   height: 34px;
+  margin-left: 20px;
+  margin-right: 5px;
 }
 
 .switch input { 
@@ -63,12 +68,12 @@ $text: 'Manrope', sans-serif;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: colors.$toggle-background;
   -webkit-transition: .4s;
   transition: .4s;
-  border-radius: 34px;
-  width: 45px;
-  height: 20px;
+  border-radius: 9px;
+  width: 40px;
+  height: 18px;
   margin-left: -20px;
 }
 
@@ -78,7 +83,7 @@ $text: 'Manrope', sans-serif;
   height: 12px;
   width: 12px;
   left: 4px;
-  bottom: 5px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -86,17 +91,17 @@ $text: 'Manrope', sans-serif;
 }
 
 input:checked + .yearly-toggle {
-  background-color: #2196F3;
+  background-color: colors.$full-slider-bar;
 }
 
 input:focus + .yearly-toggle {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px colors.$full-slider-bar;
 }
 
 input:checked + .yearly-toggle:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 .price {
@@ -105,14 +110,25 @@ input:checked + .yearly-toggle:before {
   width: 80%;
 }
 
+.pricePerMonth{
+  font-family: $text;
+  font-weight: 600;
+  font-size: 16px;
+  color: colors.$text;
+  display: flex;
+  align-items: center;
+}
+
 .slider {
   -webkit-appearance: none;
-  width: 85%;
+  width: 100%;
   height: 5px;
   border-radius: 2.5px;
   outline: none;
   -webkit-transition: .2s;
   transition: opacity .2s;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /*.slider::-moz-range-thumb {
@@ -126,9 +142,17 @@ input:checked + .yearly-toggle:before {
   background-repeat: no-repeat;
   border-radius: 50%;
   background-position: center; 
-  background-color: colors.$slider-backround;
+  background-color: colors.$full-slider-bar;
   border: none;
-  box-shadow: 0px 5px 15px colors.$slider-backround;
+  //box-shadow: 0px 5px 15px colors.$slider-backround;
+}
+
+.slider::-moz-range-thumb:hover {
+  background-color: colors.$slider-backround;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: colors.$slider-backround;
 }
 
 .slider::-webkit-slider-thumb {
@@ -147,18 +171,20 @@ input:checked + .yearly-toggle:before {
 
 .billing{
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: flex-end;
-  font-size: 12px;
+  font-size: 10px;
   font-family: $text;
   font-weight: 600;
   color: colors.$text;
+  padding-right: 15px;
+  gap: 10px;
 }
 
 .billingBackground {
   width: 100px;
-  height: 20px;
-  border-radius: 10px;
+  height: 18px;
+  border-radius: 9px;
   background-color: colors.$discount-background;
   display: flex;
   justify-content: center;
@@ -188,25 +214,31 @@ input:checked + .yearly-toggle:before {
 }
 
 .button {
- width: 130px;
- height: 30px;
- border-radius: 15px;
- background-color: colors.$text-CTA-background;
- display: flex;
- justify-content: center;
- align-items: center;
- color: colors.$CTA-text;
- font-family: $text;
- font-weight: 600;
- font-size: 12px;
+  width: 130px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: colors.$text-CTA-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: colors.$CTA-text;
+  font-family: $text;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: colors.$pricing-component-background;
 }
 
 .lowerBlock {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 85%;
   justify-content: space-between;
+  padding: 25px 40px 0 40px;
+  border-top: 2px solid colors.$empty-slider-bar;
 }
 
 .check {

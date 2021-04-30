@@ -19,48 +19,44 @@ export default function App() {
 
   return (
     <div className='content'>
+
       <div className='header'>
         <p>Simple, traffic-based pricing</p>
         <div className='subtitle'>
-        <p className='headerText'> Sign-up for our 30-day trial. No credit card required.</p>
+          <p className='headerText'> Sign-up for our 30-day trial. No credit card required.</p>
         </div>
       </div>
       <div className='component'>
-        <div className='price'>
+        <div className='componentTop'>
           <div className='headerText'>{pageviews[selectedIndex]} PAGEVIEWS</div>
-          {/*<div className='headerText'> <div className='priceText'>${prices[selectedIndex]}</div> / per month</div>*/}
-          <div className='headerText'> <div className='priceText'>
+
+          <div className='pricePerMonth'> <div className='priceText'>
             ${(discount ? prices[selectedIndex] * 0.75 : prices[selectedIndex]).toFixed(2)}
           </div> / per month</div>
-        </div>
 
-        <input
-          type="range"
-          min="0"
-          max="4"
-          value={selectedIndex} //current value of input
-          onChange={changePrice}
-          className='slider'
-          style={{ background: 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + percentColorRange + '%, hsl(224, 65%, 95%) ' + percentColorRange + '%, hsl(224, 65%, 95%) 100%)' }}
-        />
 
-        <div className='billing'>
-          <p>Monthly Billing</p>
-          <span className='space'></span>
-          <div className='margin'>
-            <label className="switch">
-              <input type="checkbox" onChange={changePriceDiscount} />
-              <span className="yearly-toggle"></span>
-            </label>
+          <input
+            type="range"
+            min="0"
+            max="4"
+            value={selectedIndex} //current value of input
+            onChange={changePrice}
+            className='slider'
+            style={{ background: 'linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ' + percentColorRange + '%, hsl(224, 65%, 95%) ' + percentColorRange + '%, hsl(224, 65%, 95%) 100%)' }}
+          />
+
+          <div className='billing'>
+            <p>Monthly Billing</p>
+            
+              <label className="switch">
+                <input type="checkbox" onChange={changePriceDiscount} />
+                <span className="yearly-toggle"></span>
+              </label>
+            
+            <p>Yearly Billing</p>
+            <p className='billingBackground'></p>
           </div>
-          <span className='space'></span>
-          <p>Yearly Billing</p>
-          <span className='space'></span>
-          <p className='billingBackground'></p>
-          
         </div>
-
-        <div className='line'></div>
         <div className='lowerBlock'>
           <div className='checkList'>
             <div className='checkElement'>
@@ -78,6 +74,9 @@ export default function App() {
         </div>
 
       </div>
+
+
     </div>
+
   )
 }
