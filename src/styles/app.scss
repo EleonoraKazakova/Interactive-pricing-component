@@ -1,8 +1,8 @@
 @use 'colors';
 $text: 'Manrope', sans-serif;
-@use 'gridMobil';
+@use 'gridMobile';
 
-@media  (min-width: 800px) {
+@media (min-width: 800px) {
 .content{
   display: grid;
   grid-template-columns: auto 500px auto;

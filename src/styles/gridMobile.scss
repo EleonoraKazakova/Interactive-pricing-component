@@ -1,7 +1,7 @@
 @use 'colors';
 $text: 'Manrope', sans-serif;
 
-@media  (min-width: 321px) and (max-width: 799px){
+@media (max-width: 799px){
   body{
     margin: 0;
     background-color: colors.$main-background;
